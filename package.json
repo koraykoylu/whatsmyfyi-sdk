@@ -1,0 +1,50 @@
+{
+  "name": "@whatsmyfyi/sdk",
+  "version": "0.2.0",
+  "description": "Official TypeScript SDK for the whatsmy.fyi IP API — get your public IP with zero config, add free geolocation with an API key.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "keywords": [
+    "ip",
+    "ip-address",
+    "ip-lookup",
+    "geolocation",
+    "ip-geolocation",
+    "public-ip",
+    "what-is-my-ip",
+    "ipify-alternative",
+    "asn",
+    "api",
+    "whatsmy.fyi"
+  ],
+  "author": "Koray Köylü (https://whatsmy.fyi)",
+  "homepage": "https://whatsmy.fyi/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koraykoylu/whatsmyfyi-sdk.git"
+  },
+  "bugs": { "url": "https://github.com/koraykoylu/whatsmyfyi-sdk/issues" },
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  }
+}
